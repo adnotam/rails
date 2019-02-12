@@ -378,7 +378,7 @@ module ActiveRecord
         )
       end
 
-      def apply_join_dependency(eager_loading: group_values.empty?)
+      def apply_join_dependency(eager_loading: true)
         join_dependency = construct_join_dependency
         relation = except(:includes, :eager_load, :preload).joins!(join_dependency)
 
